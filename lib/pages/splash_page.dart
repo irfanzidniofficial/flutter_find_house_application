@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_find_house_application/pages/home_page.dart';
 import 'package:flutter_find_house_application/theme.dart';
 
 class SplashPage extends StatelessWidget {
@@ -6,70 +7,81 @@ class SplashPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        bottom: false,
+        // bottom: false,
         child: Stack(
           children: [
             Align(
               alignment: Alignment.bottomCenter,
               child: Image.asset('assets/splash-image.png'),
-              ),
+            ),
             Padding(
               padding: EdgeInsets.only(
                 top: 30,
                 left: 30,
-                ),
+              ),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-
-              children: [
-                Container(
-                  height: 50,
-                  width: 30,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/logo.png'),
+                children: [
+                  Container(
+                    height: 30,
+                    width: 30,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/logo.png'),
                       ),
+                    ),
                   ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Text('Find Cozy House\nto Stay and Happyy',
-                style: blackTextStyle.copyWith(fontSize: 24,
-                ),
-              ),
-              SizedBox(height: 10,
-              ),
-              Text("Stop membuang banyak waktu\npada tempat yang tidak habitable",
-              style: greyTextStyle.copyWith(fontSize: 16,
-              ),
-              ),
-              SizedBox(height: 40,
-              ),
-              Container(
-                width: 210,
-                height: 50,
-                child: RaisedButton(
-                  onPressed: (){},
-                  color: purpleColor,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(17),
+                  SizedBox(
+                    height: 30,
                   ),
-                  child: Text(
-                    "Explore Now",
-                    style: whiteTextStyle.copyWith(
-                      fontSize: 18,
-                ),
-                ),
-                ),
+                  Text(
+                    'Find Cozy House\nto Stay and Happy',
+                    style: blackTextStyle.copyWith(
+                      fontSize: 24,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Stop membuang banyak waktu\npada tempat yang tidak habitable",
+                    style: greyTextStyle.copyWith(
+                      fontSize: 16,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 40,
+                  ),
+                  Container(
+                    width: 210,
+                    height: 50,
+                    child: RaisedButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                        );
+                      },
+                      color: purpleColor,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(17),
+                      ),
+                      child: Text(
+                        "Explore Now",
+                        style: whiteTextStyle.copyWith(
+                          fontSize: 18,
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
-              ],
-            ),
             ),
           ],
         ),
       ),
     );
-  
   }
 }
